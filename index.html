@@ -111,7 +111,13 @@
     .hero-content { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; gap: 72px; align-items: center; }
     .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 7px 11px; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; color: var(--text-soft); font-size: .78rem; font-weight: 700; box-shadow: var(--shadow-sm); }
     .eyebrow i { color: var(--accent); font-size: .55rem; }
-    .hero-title { font-size: clamp(3.2rem, 7vw, 6rem); line-height: .98; letter-spacing: -.075em; margin-bottom: 22px; }
+   .hero-title {
+    font-size: clamp(2.8rem, 5.2vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -.065em;
+    margin-bottom: 22px;
+    white-space: nowrap;
+}
     .gradient-text { display: block; background: linear-gradient(110deg, var(--text) 25%, var(--primary) 72%, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .typing-animation { display: block; margin-top: 15px; color: var(--accent); font-size: clamp(1.45rem, 3vw, 2.35rem); letter-spacing: -.045em; min-height: 1.2em; }
     .hero-description { max-width: 650px; margin-bottom: 30px; color: var(--text-muted); font-size: 1.06rem; }
