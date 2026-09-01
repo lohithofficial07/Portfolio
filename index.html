@@ -94,8 +94,6 @@
     .nav-container { min-height: 64px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
     .nav-logo { text-decoration: none; }
     .logo-text { font-weight: 800; font-size: 1.15rem; letter-spacing: -.04em; }
-    .logo-text::before { content: "< "; color: var(--primary); }
-    .logo-text::after { content: " />"; color: var(--accent); }
     .nav-menu { display: flex; align-items: center; gap: 6px; }
     .nav-link { position: relative; padding: 9px 10px; text-decoration: none; color: var(--text-soft); font-size: .88rem; font-weight: 600; border-radius: 10px; transition: color var(--transition), background var(--transition); }
     .nav-link:hover, .nav-link.active { color: var(--text); background: var(--surface-2); }
@@ -252,7 +250,7 @@
 <body>
   <nav class="navbar" aria-label="Primary navigation">
     <div class="nav-container">
-      <a class="nav-logo" href="#home" aria-label="T Lohith home"><span class="logo-text">T Lohith</span></a>
+      <a class="nav-logo" href="#home" aria-label="T Lohith home"><span class="logo-text"><h3>T Lohith. </h3></span></a>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
       <div class="nav-menu" id="nav-menu">
         <a href="#home" class="nav-link active">Home</a>
