@@ -251,6 +251,696 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
+/* =========================================================
+   FEATURED PROJECTS
+========================================================= */
+
+.projects {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* Optional subtle background */
+.projects::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 10%;
+  left: -250px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.025);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.projects .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.projects-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.projects-heading .section-kicker {
+  display: block;
+  margin-bottom: 14px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+
+  color: #888;
+}
+
+.projects-heading .section-title {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  font-weight: 800;
+
+  color: #111;
+}
+
+.projects-heading-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  max-width: 350px;
+}
+
+.projects-heading-text span {
+  font-size: 13px;
+  font-weight: 800;
+  color: #111;
+}
+
+.projects-heading-text p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJECT LIST
+========================================================= */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+
+/* =========================================================
+   PROJECT ITEM
+========================================================= */
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+
+  min-height: 620px;
+
+  background: #fff;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+
+  border-color: #d5d5d5;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   REVERSE PROJECT
+========================================================= */
+
+.project-item-reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.project-item-reverse .project-visual {
+  order: 2;
+}
+
+.project-item-reverse .project-details {
+  order: 1;
+}
+
+
+/* =========================================================
+   PROJECT VISUAL
+========================================================= */
+
+.project-visual {
+  position: relative;
+
+  min-height: 620px;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.project-visual img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-item:hover .project-visual img {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.visual-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.42) 0%,
+      rgba(0, 0, 0, 0.05) 40%,
+      rgba(0, 0, 0, 0.60) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PROJECT TOP
+========================================================= */
+
+.project-top {
+  position: absolute;
+
+  top: 28px;
+  left: 28px;
+  right: 28px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #111;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-type {
+  padding: 9px 14px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  color: #111;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   IMAGE LABEL
+========================================================= */
+
+.visual-label {
+  position: absolute;
+
+  left: 28px;
+  bottom: 28px;
+
+  z-index: 3;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 17px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #111;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.project-item:hover .visual-label {
+  transform: translateY(-5px);
+  background: #fff;
+}
+
+.visual-label i {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PROJECT DETAILS
+========================================================= */
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 70px;
+
+  background: #fff;
+}
+
+.project-category {
+  margin-bottom: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #999;
+}
+
+.project-details h3 {
+  max-width: 560px;
+
+  margin: 0 0 22px;
+
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.08;
+
+  letter-spacing: -1.8px;
+
+  color: #111;
+}
+
+.project-details p {
+  max-width: 520px;
+
+  margin: 0 0 30px;
+
+  color: #777;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   TECHNOLOGIES
+========================================================= */
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 40px;
+}
+
+.project-technologies span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 12px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+
+  background: #fafafa;
+
+  color: #555;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.project-technologies span:hover {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+
+/* =========================================================
+   PROJECT FOOTER
+========================================================= */
+
+.project-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid #ededed;
+}
+
+.project-year {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.project-year span {
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  color: #aaa;
+}
+
+.project-year strong {
+  font-size: 13px;
+  font-weight: 800;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   PROJECT BUTTONS
+========================================================= */
+
+.project-buttons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.project-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 43px;
+
+  padding: 0 17px;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.project-action:hover {
+  transform: translateY(-3px);
+}
+
+
+/* GitHub */
+
+.github-action {
+  background: #111;
+  color: #fff;
+}
+
+.github-action:hover {
+  background: #2a2a2a;
+}
+
+
+/* Live */
+
+.live-action {
+  border: 1px solid #dedede;
+
+  background: #fff;
+
+  color: #111;
+}
+
+.live-action:hover {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+
+/* =========================================================
+   TASK BUDDY IMAGE
+========================================================= */
+
+.task-project {
+  background: #e9e5dd;
+}
+
+
+/* =========================================================
+   DEVSCOPE IMAGE
+========================================================= */
+
+.devscope-project {
+  background: #151515;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .projects {
+    padding: 100px 0;
+  }
+
+  .projects-heading {
+    margin-bottom: 55px;
+  }
+
+  .project-item,
+  .project-item-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item-reverse .project-visual {
+    order: 1;
+  }
+
+  .project-item-reverse .project-details {
+    order: 2;
+  }
+
+  .project-visual {
+    min-height: 500px;
+  }
+
+  .project-details {
+    padding: 50px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .projects {
+    padding: 80px 0;
+  }
+
+  .projects-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+  }
+
+  .projects-heading .section-title {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .projects-heading-text {
+    max-width: 100%;
+  }
+
+  .projects-list {
+    gap: 45px;
+  }
+
+  .project-item {
+    border-radius: 20px;
+  }
+
+  .project-visual {
+    min-height: 360px;
+  }
+
+  .project-top {
+    top: 18px;
+    left: 18px;
+    right: 18px;
+  }
+
+  .project-index {
+    width: 42px;
+    height: 42px;
+  }
+
+  .project-type {
+    padding: 8px 11px;
+
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .visual-label {
+    left: 18px;
+    bottom: 18px;
+
+    padding: 10px 13px;
+
+    font-size: 11px;
+  }
+
+  .project-details {
+    padding: 32px 25px;
+  }
+
+  .project-details h3 {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .project-details p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .project-technologies {
+    margin-bottom: 30px;
+  }
+
+  .project-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-buttons {
+    width: 100%;
+  }
+
+  .project-action {
+    flex: 1;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .projects-heading .section-title {
+    font-size: 37px;
+  }
+
+  .project-visual {
+    min-height: 300px;
+  }
+
+  .project-details {
+    padding: 28px 20px;
+  }
+
+  .project-details h3 {
+    font-size: 26px;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-action {
+    width: 100%;
+  }
+
+}
+   
   </style>
 </head>
 <body>
@@ -337,24 +1027,206 @@
     </section>
 
     <section id="projects" class="projects">
-      <div class="container">
-        <div class="section-kicker">Selected Work</div><h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&amp;h=400&amp;fit=crop" alt="Task Buddy project preview" loading="lazy"><div class="project-overlay"><div class="project-links"><a href="https://github.com/lohithofficial/TaskBuddy-Project" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Task Buddy GitHub"><i class="fab fa-github"></i></a><a href="https://lohithofficial.github.io/TaskBuddy-Project/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open Task Buddy"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
-            <div class="project-content"><h3>Task Buddy</h3><p>A modern task manager Progressive Web App with offline support and intuitive UI.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">CSS3</span></div></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&amp;h=400&amp;fit=crop" alt="GitHub Username Finder project preview" loading="lazy"><div class="project-overlay"><div class="project-links"><a href="https://github.com/lohithofficial/Github-username-project" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Username Finder GitHub"><i class="fab fa-github"></i></a><a href="https://lohithofficial.github.io/Github-username-project/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub Username Finder"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
-            <div class="project-content"><h3>GitHub Username Finder</h3><p>Search GitHub users and view their profiles, repositories, and statistics in real-time.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">API</span><span class="tech-tag">JavaScript</span></div></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image"><img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&amp;h=400&amp;fit=crop" alt="ToDo List App project preview" loading="lazy"><div class="project-overlay"><div class="project-links"><a href="https://github.com/lohithofficial/ToDo-List-Project" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="ToDo List GitHub"><i class="fab fa-github"></i></a><a href="https://lohithofficial.github.io/ToDo-List-Project/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open ToDo List"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div></div>
-            <div class="project-content"><h3>ToDo List App</h3><p>Classic yet modern todo application with local storage and clean interface.</p><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span></div></div>
-          </article>
-        </div>
+  <div class="container">
+
+    <!-- Section Heading -->
+    <div class="projects-heading">
+      <div>
+        <span class="section-kicker">SELECTED WORK</span>
+        <h2 class="section-title">Featured Projects</h2>
       </div>
-    </section>
+
+      <div class="projects-heading-text">
+        <span>02</span>
+        <p>Projects built with modern technologies and real-world use cases.</p>
+      </div>
+    </div>
+
+
+    <!-- Projects -->
+    <div class="projects-list">
+
+      <!-- =========================
+           PROJECT 01
+      ========================== -->
+      <article class="project-item">
+
+        <div class="project-visual task-project">
+
+          <div class="project-top">
+            <span class="project-index">01</span>
+            <span class="project-type">PRODUCTIVITY APP</span>
+          </div>
+
+          <img
+            src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1400&q=85"
+            alt="Modern Task Management Application"
+            loading="lazy"
+          >
+
+          <div class="visual-overlay"></div>
+
+          <div class="visual-label">
+            <i class="fas fa-check-double"></i>
+            Task Management
+          </div>
+
+        </div>
+
+
+        <div class="project-details">
+
+          <div class="project-category">
+            WEB APPLICATION
+          </div>
+
+          <h3>Modern Task Management Application</h3>
+
+          <p>
+            A clean and modern task management application built to help
+            users organize their daily work, manage priorities, and keep
+            track of tasks through a simple and intuitive experience.
+          </p>
+
+
+          <div class="project-technologies">
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>CSS3</span>
+            <span>Local Storage</span>
+          </div>
+
+
+          <div class="project-footer">
+
+            <div class="project-year">
+              <span>PROJECT</span>
+              <strong>2026</strong>
+            </div>
+
+            <div class="project-buttons">
+
+              <a
+                href="https://github.com/lohithofficial/TaskBuddy-Project"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-action github-action"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+
+              <a
+                href="https://lohithofficial07.github.io/Task-Buddy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-action live-action"
+              >
+                Live Demo
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           PROJECT 02
+      ========================== -->
+      <article class="project-item project-item-reverse">
+
+        <div class="project-visual devscope-project">
+
+          <div class="project-top">
+            <span class="project-index">02</span>
+            <span class="project-type">DEVELOPER TOOL</span>
+          </div>
+
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=85"
+            alt="DevScope GitHub Tracker"
+            loading="lazy"
+          >
+
+          <div class="visual-overlay"></div>
+
+          <div class="visual-label">
+            <i class="fab fa-github"></i>
+            Developer Analytics
+          </div>
+
+        </div>
+
+
+        <div class="project-details">
+
+          <div class="project-category">
+            DEVELOPER PLATFORM
+          </div>
+
+          <h3>DevScope GitHub Tracker</h3>
+
+          <p>
+            A developer-focused GitHub tracking platform that makes it
+            easier to explore profiles, repositories, activity, and
+            developer statistics through an interactive interface.
+          </p>
+
+
+          <div class="project-technologies">
+            <span>React</span>
+            <span>GitHub API</span>
+            <span>JavaScript</span>
+            <span>Vercel</span>
+          </div>
+
+
+          <div class="project-footer">
+
+            <div class="project-year">
+              <span>PROJECT</span>
+              <strong>2026</strong>
+            </div>
+
+            <div class="project-buttons">
+
+              <a
+                href="https://github.com/lohithofficial/DevScope-GitHub-Tracker"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-action github-action"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+
+              <a
+                href="https://devscope-github-tracker.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-action live-action"
+              >
+                Live Demo
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
 
     <section id="contact" class="contact">
       <div class="container">
@@ -369,7 +1241,7 @@
               <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/lohithofficial07" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></div>
             </div>
             <div class="social-links">
-              <a href="https://github.com/lohithofficial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/lohithofficial07" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/lohithofficial07" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
@@ -465,10 +1337,10 @@
 
       /* EmailJS: first template sends the message to Lohith.
          Second template is retained for the automatic reply template already configured in EmailJS. */
-      const EMAILJS_PUBLIC_KEY = "MCpahOxmUUqTZbWAF";
-      const EMAILJS_SERVICE_ID = "service_ls9qvq9";
-      const OWNER_TEMPLATE_ID = "template_j2bi66s";
-      const AUTO_REPLY_TEMPLATE_ID = "template_et7983i";
+      const EMAILJS_PUBLIC_KEY = "GCT8ltfVTkX1tZSle";
+      const EMAILJS_SERVICE_ID = "service_al4wdja";
+      const OWNER_TEMPLATE_ID = "template_yf42dmk";
+      const AUTO_REPLY_TEMPLATE_ID = "template_yk0muuq";
       const contactForm = document.getElementById("contact-form");
       const sendButton = document.getElementById("send-button");
       const formStatus = document.getElementById("form-status");
